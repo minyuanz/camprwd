@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="banner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <title>物品租賃|好享營</title>
+    <link rel="shortcut icon" href="../img/favorite.ico">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .step_wrap {
+            width: 1200px;
+            margin: auto;
+            /* padding: 30px; */
+            /* border: 1px solid #aaa; */
+        }
+
+        .step_wrap h2 {
+            font-size: 32px;
+            text-align: center;
+            /* margin-top: 30px; */
+        }
+
+        .step_wrap .step {
+            display: flex;
+            margin: 50px;
+            letter-spacing: 3px;
+            /* margin-bottom: 50px; */
+            /* margin-left: 30px; */
+        }
+
+        .step_wrap .step p {
+            margin-left: 30px;
+            /* font-family: 'Noto Serif', serif; */
+        }
+
+        .list_wrap {
+            /* border: 1px solid red; */
+            width: 1200px;
+            margin: auto;
+            margin-top: 100px;
+        }
+
+        .list_title {
+            /* border: 1px solid blue; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+        }
+
+        .list_title i {
+            font-size: 28px;
+            margin-right: 20px;
+        }
+
+        .list_title h2 {
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .list_group {
+            /* border: 1px solid blue; */
+            padding: 30px 0;
+            background-color: #fff;
+        }
+
+        .list_backcolor {
+            /* border: 1px solid red; */
+            background-color: #F7F7F7;
+            display: flex;
+            justify-content: space-between;
+            width: 1100px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .list_backcolor>div {
+            display: flex;
+            /* border: 1px solid red; */
+            /* align-items: center; */
+        }
+
+        .list_backcolor .pic {
+            padding-top: 50px;
+            /* border: 1px solid red; */
+        }
+
+        .list_backcolor .pic img {
+            width: 100%;
+            vertical-align: bottom;
+        }
+
+        .list_backcolor .txt {
+            text-align: center;
+            margin-left: 50px;
+        }
+
+        .list_backcolor .txt h3 {
+            font-size: 24px;
+        }
+
+        .list_backcolor .txt p {
+            margin-top: 50px;
+            /* font-family: 'Noto Serif TC', sans-serif; */
+            /* border: 1px solid red; */
+        }
+
+        .list_backcolor .count {
+            text-align: center;
+            margin-right: 100px;
+            /* border: 1px solid red; */
+        }
+
+        .list_backcolor .count h3 {
+            font-size: 24px;
+        }
+
+        .list_backcolor .count input {
+            margin-top: 50px;
+            width: 100px;
+            padding: 5px 10px;
+        }
+
+        .list_backcolor .del {
+            align-self: center;
+        }
+
+        .list_backcolor .del i {
+            font-size: 30px;
+            /* border: 1px solid red; */
+        }
+
+        .quest_wrap {
+            width: 1200px;
+            margin: auto;
+            /* margin: 100px auto; */
+            margin-top: 100px;
+            margin-bottom: 100px;
+            /* border: 1px solid #aaa; */
+            padding: 30px;
+        }
+
+        .quest_wrap h2 {
+            /* border: 1px solid red; */
+            font-size: 32px;
+            text-align: center;
+        }
+
+        .quest_wrap form {
+            /* border: 1px solid red; */
+            width: 70%;
+            /*840*/
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            /* font-family: 'Noto Serif TC', sans-serif; */
+
+        }
+
+        .quest_wrap form>div {
+            /* border: 1px solid blue; */
+            margin-bottom: 50px;
+            width: 420px;
+        }
+
+        .quest_wrap form .email,
+        .quest_wrap form .msg {
+            margin-right: 420px;
+        }
+
+        .quest_wrap form label {
+            margin-right: 100px;
+        }
+
+        .quest_wrap form .rentday input,
+        .quest_wrap form .returnday input {
+            margin-left: -30px;
+            padding: 0 20px;
+            /* border: 1px solid blue; */
+        }
+
+        .quest_wrap form .msg label {
+            vertical-align: top;
+        }
+
+        .quest_wrap form button {
+            margin: auto;
+            padding: 5px 30px;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="logo.svg" alt="">
+                </a>
+            </div>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="btn">
+                <div class="user">
+                    <a href="../user/user.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="banner.png" alt="">
+    </div>
+
+    <div class="path">
+        <ul>
+            <li><a href="../index.html">首頁</a></li>
+            <li><a href="rent.html">物品租賃</a></li>
+        </ul>
+    </div>
+
+    <section class="step_wrap">
+        <h2>租賃流程</h2>
+
+        <div class="step_list">
+            <div class="step">
+                <span>STEP1.</span>
+                <p>選取您需要的裝備數量加入詢問車。</p>
+            </div>
+
+            <div class="step">
+                <span>STEP2.</span>
+                <p>填寫訂購人資料及租借/歸還日期，確認無誤點選"確定送出"。</p>
+            </div>
+
+            <div class="step">
+                <span>STEP3.</span>
+                <p>等待確認您的預訂所使用裝備的期間是否有庫存，會以Email跟您確認是否有庫存後，再煩請於當日午夜12點前將所需的裝備租金總額匯至我們的戶頭，待我們收到款項後會再告知該訂單完成。</p>
+            </div>
+
+            <div class="step">
+                <span>STEP4.</span>
+                <p>訂單成立後，於租借日攜帶證件來店領取，當場清點所租借之品項。</p>
+            </div>
+
+            <div class="step">
+                <span>STEP5.</span>
+                <p>歸還裝備時，於現場清點所租借之品項無誤。</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="list_wrap">
+        <div class="list_title">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h2>詢問清單</h2>
+            <!-- <img src="https://fakeimg.pl/40x40/200"> -->
+        </div>
+        <div class="list_group">
+            <div class="list_backcolor">
+                <div>
+                    <div class="pic">
+                        <img src="rent.png" alt="">
+                    </div>
+                    <div class="txt">
+                        <h3>產品名稱</h3>
+                        <p>雙人帳篷</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="count">
+                        <h3>數量</h3>
+                        <input type="text">
+                    </div>
+                    <div class="del">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="quest_wrap">
+        <h2>填寫詢問內容</h2>
+
+        <form action="">
+            <div class="name">
+                <label>姓名</label>
+                <input type="text" minlength="3" maxlength="5">
+            </div>
+
+            <div class="tel">
+                <label>電話</label>
+                <input type="tel">
+            </div>
+
+            <div class="email">
+                <label>信箱</label>
+                <input type="eamil">
+            </div>
+
+            <div class="rentday">
+                <label>租借日期</label>
+                <input type="date">
+            </div>
+
+            <div class="returnday">
+                <label>歸還日期</label>
+                <input type="date">
+            </div>
+
+            <div class="msg">
+                <label>留言</label>
+                <textarea name="" id="" cols="19" rows="5"></textarea>
+            </div>
+
+            <button>送出</button>
+        </form>
+
+    </section>
+    <footer>
+        <div class="footer_wrap">
+            <a href="../index.html">
+                <div class="logo">
+                    <img src="logo.svg" alt="">
+                </div>
+            </a>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="txt">
+                <p>
+                    電話 : 00-0000-0000 / 信箱 : camping@gmail.com<br>
+                    本網站為緯育TibaMe前端工程師專業技術養成班第85期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>

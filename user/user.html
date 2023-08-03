@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員登入|好享營</title>
+    <link rel="shortcut icon" href="../img/favorite.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        body {
+            background-image: url("banner.jpg");
+            display: flex;
+            font-family: 'Noto Sans TC', sans-serif;
+            position: relative;
+        }
+
+        .logo {
+            /* border: 1px solid red; */
+            transform: scale(2.5);
+            position: absolute;
+            left: 30%;
+            top: 50%;
+            animation: slide2right 3s;
+        }
+
+        @keyframes slide2right {
+            0% {
+                left: 0;
+                translate: -100% 0;
+                opacity: 0;
+                transform: scale(1);
+
+            }
+
+            100% {
+                left: 30%;
+                top: 50%;
+                opacity: 1;
+                transform: scale(2.5);
+            }
+        }
+
+        section {
+            /* border: 1px solid red; */
+            width: 500px;
+            margin-top: 10%;
+            margin-left: auto;
+            margin-right: 10%;
+            box-shadow: 0px 0px 10px #aaa;
+            background-color: #f7f7f7;
+            text-align: center;
+        }
+
+        h2 {
+            margin: 25px;
+            font-size: 32px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px;
+        }
+
+        input {
+            outline: none;
+            padding: 10px;
+            border-radius: 10px;
+            border: 1px solid #aaa;
+        }
+
+        button {
+            margin-top: 30px;
+            padding: 10px 30px;
+        }
+
+        .func a {
+            display: inline-block;
+            margin: 30px;
+            text-decoration: none;
+            color: #00f;
+            position: relative;
+        }
+
+        .func a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            border-bottom: 1px solid #aaa;
+            transition: .5s;
+
+        }
+
+        .func a:hover::after {
+            width: 100%;
+        }
+
+        span {
+            font-size: 14px;
+            position: relative;
+        }
+
+        span::before {
+            content: '';
+            position: absolute;
+            border-bottom: 1px solid #aaa;
+            width: 150px;
+            height: 100%;
+            bottom: 50%;
+            left: -200px;
+        }
+
+        span::after {
+            content: '';
+            position: absolute;
+            border-bottom: 1px solid #aaa;
+            width: 150px;
+            height: 100%;
+            bottom: 50%;
+            right: -200px;
+        }
+
+        .more_btn {
+            display: flex;
+            justify-content: center;
+            margin: 50px;
+        }
+
+        .fb:hover i,
+        .google:hover i,
+        .line:hover i {
+            box-shadow: 0px 0px 10px #777;
+            border-radius: 10px;
+        }
+
+        i {
+            font-size: 24px;
+            margin: 10px;
+            color: #000;
+            display: inline-block;
+            padding: 15px;
+            transition: .5s;
+        }
+
+        .copyright{
+            position: absolute;
+            bottom: -20%;
+            left: 0;
+            color: #f7f7f7;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo">
+        <img src="logo.svg" alt="">
+    </div>
+
+    <section>
+        <h2>登入</h2>
+        <form action="">
+            <label for="">
+                帳號：
+                <input type="text" placeholder="請輸入帳號">
+            </label>
+            <label for="">
+                密碼：
+                <input type="password" placeholder="請輸入密碼">
+            </label>
+        </form>
+        <button>登入</button>
+        <div class="func">
+            <a href="">
+                忘記密碼
+            </a>
+            <a href="">
+                註冊會員
+            </a>
+        </div>
+        <span>快速登入</span>
+        <div class="more_btn">
+            <div class="fb">
+                <a href="">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+            <div class="google">
+                <a href="">
+                    <i class="fa-brands fa-google"></i>
+                </a>
+            </div>
+            <div class="line">
+                <a href="">
+                    <i class="fa-brands fa-line"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <div class="copyright">
+        本網站為緯育TibaMe前端工程師專業技術養成班第85期學員專題作品，本平台僅供學習、展示之用。
+    </div>
+</body>
+
+</html>

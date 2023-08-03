@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>所有商品|好享營</title>
+    <link rel="shortcut icon" href="../img/favorite.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="banner.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            background-color: #F7F7F7;
+            font-family: 'Noto Sans TC', sans-serif;
+
+        }
+
+        .item_wrap {
+            /* border: 1px solid red; */
+            width: 1200px;
+            margin: auto;
+            display: flex;
+        }
+
+        .sort {
+            width: 20%;
+            /* border: 1px solid red; */
+        }
+
+        .sort span {
+            display: block;
+            padding: 5px 10px;
+            background-color: #57835E;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .sort ul {
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            /* align-items: center; */
+        }
+
+        .sort ul a {
+            text-decoration: none;
+            color: #000;
+            font-size: 14px;
+            display: block;
+            margin: 10px 0;
+            border-bottom: 1px solid transparent;
+            transition: .3s;
+            padding: 10px 20px;
+        }
+
+        .sort ul a:hover {
+            border-bottom: 1px solid #000;
+        }
+
+        .item_group {
+            /* border: 1px solid red; */
+            width: 80%;
+            /*w=960*/
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            /* position: relative; */
+        }
+
+        .item {
+            /*w=320*/
+            margin: 25px;
+            padding: 10px;
+            position: relative;
+        }
+
+        .item:hover {
+            /* box-shadow: 0px 0px 1px #000; */
+            background-color: #fff;
+            transition: .3s;
+
+        }
+        .item:hover a .txt{
+            /* display: block; */
+            opacity: 1;
+            translate: 100% 0;
+            border-radius: 0 10px 10px 0;
+            transition: translate .9s,
+                        opacity .5s .3s;
+        }
+        .item_right:hover a .txt{
+            /* display: block; */
+            opacity: 1;
+            translate: -100% 0;
+            border-radius: 10px 0 0 10px;
+            transition: translate .9s,
+                        opacity .5s .3s;
+        }
+        .item img {
+            vertical-align: bottom;
+            width: 100%;
+        }
+
+        .item a .txt {
+            background-color: #fff;
+            position: absolute;
+            z-index: 3;
+            bottom: 0;
+            right: 0;
+            margin: 0;
+            width: 270px;
+            font-size: 14px;
+            color: #666;
+            padding: 10px 0;
+            box-shadow: 0px 0px 3px  #aaa;
+            opacity: 0;
+            /* border: 1px solid red; */
+        }
+
+        .item a .txt span {
+            text-decoration: line-through;
+            color: #ccc;
+            margin-bottom: 20px;
+        }
+
+        .item a {
+            /* border: 1px solid red; */
+            text-decoration: none;
+            color: #000;
+            text-align: center;
+            /* position: relative; */
+
+        }
+
+        .item a p {
+            font-size: 18px;
+            margin: 30px 0;
+        }
+
+        .item a > span {
+            display: block;
+            font-size: 12px;
+            background-color: #57835E;
+            padding: 5px 0;
+            /* background-color: #6a6; */
+        }
+
+        .nextpage {
+            /* border: 1px solid red; */
+            display: flex;
+            margin-bottom: 100px;
+        }
+
+        .nextpage .page {
+            margin: 0 10px;
+            border-radius: 50%;
+        }
+
+        .nextpage a {
+            /* border: 1px solid red; */
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 5px 10px;
+        }
+
+        .nextpage .page1 {
+            background-color: #D9D9D9;
+        }
+
+        .nextpage .page2:hover,
+        .nextpage .page3:hover,
+        .nextpage .arrow:hover {
+            background-color: #D9D9D9;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="logo.svg" alt="">
+                </a>
+            </div>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="btn">
+                <div class="user">
+                    <a href="../user/user.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="banner.jpg" alt="">
+    </div>
+
+    <div class="path">
+        <ul>
+            <li><a href="../index.html">首頁</a></li>
+            <li><a href="../item/item.html">所有商品</a></li>
+        </ul>
+    </div>
+
+    <section class="item_wrap">
+        <div class="sort">
+            <span>商品購買</span>
+            <ul>
+                <li><a href="">帳篷</a></li>
+                <li><a href="">桌椅</a></li>
+                <li><a href="">寢具</a></li>
+                <li><a href="">廚具</a></li>
+                <li><a href="">燈具</a></li>
+            </ul>
+        </div>
+
+        <div class="item_group">
+            <div class="item">
+                <a href="../item_info/item_info.html">
+                    <img src="item1.jpg" alt="">
+                    <p>多功能車尾帳</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <div class="pic"></div>
+                    <img src="item2.jpg" alt="">
+                    <p>豪華家庭帳</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item item_right">
+                <a href="">
+                    <img src="item3.jpg" alt="">
+                    <p>精緻黑色帳</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="item4.jpg" alt="">
+                    <p>科技棉睡袋</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="item5.jpg" alt="">
+                    <p>花紋地墊</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item item_right">
+                <a href="">
+                    <img src="item6.jpg" alt="">
+                    <p>不鏽鋼鍋</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="item7.jpg" alt="">
+                    <p>不鏽鋼爐架</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item">
+                <a href="">
+                    <img src="item8.jpg" alt="">
+                    <p>帆布高背椅</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="item item_right">
+                <a href="">
+                    <img src="item9.jpg" alt="">
+                    <p>垂吊式露營燈</p>
+                    <span>查看規格</span>
+                    <p class="txt">
+                        <span>
+                            定價：NT$77,777<br><br>
+                        </span>
+                        售價：NT$74,147<br>
+                        庫存量：43
+                    </p>
+                </a>
+
+            </div>
+
+            <div class="nextpage">
+                <div class="page page1">
+                    <a href="">1</a>
+                </div>
+                <div class="page page2">
+                    <a href="">2</a>
+                </div>
+                <div class="page page3">
+                    <a href="">3</a>
+                </div>
+                <div class="page arrow">
+                    <a href="">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_wrap">
+            <a href="../index.html">
+                <div class="logo">
+                    <img src="logo.svg" alt="">
+                </div>
+            </a>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="txt">
+                <p>
+                    電話 : 00-0000-0000 / 信箱 : camping@gmail.com<br>
+                    本網站為緯育TibaMe前端工程師專業技術養成班第85期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

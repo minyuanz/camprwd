@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="banner.css">
+    <title>精選場地|好享營</title>
+    <link rel="shortcut icon" href="../img/favorite.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+        }
+
+        .place_wrap {
+            /* border: 1px solid red; */
+            width: 1200px;
+            margin: auto;
+        }
+
+        .control_btn label {
+            cursor: pointer;
+            /* border: 1px solid blue; */
+
+        }
+
+        .control_btn{
+            text-align: center;
+            letter-spacing: 5px;
+            background-color: #57835E;
+            border-radius: 30px;
+            color: #fff;
+            padding: 10px 0;
+            margin-bottom: 25px;
+            font-size: 20px;
+        }
+        .control_btn label{
+            /* border: 1px solid red; */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* text-align: center; */
+        }
+        .control_btn h2{
+            font-size: 24px;
+            /* border: 1px solid blue; */
+        }
+
+        .control_btn span{
+            /* border: 1px solid blue; */
+            rotate: 90deg;
+            font-size: 14px;
+
+        }
+        .control_north span{
+            rotate: -90deg;
+
+        }
+        input:checked ~ .control_btn label span{
+            rotate: 270deg;
+        }   
+
+        input:checked ~ .control_north label span{
+            /* margin-top: 15px; */
+            rotate: 90deg;
+
+        }
+        input {
+            display: none;
+        }
+
+        input:checked ~ .openarea {
+            display: block;
+        }
+
+        .openarea {
+            display: none;
+        }
+
+        .northarea {
+            display: block;
+        }
+
+        input:checked~.openarea.northarea {
+            display: none;
+        }
+
+        .card_group {
+            /* border: 1px solid #aaa; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding-bottom: 50px;
+
+        }
+        .card{
+            /* border: 1px solid blue; */
+            width: 300px;
+        }
+
+        .card_group .pic img {
+            width: 100%;
+            vertical-align: bottom;
+            transition: 1s;
+        }
+
+        .card_group img:hover {
+            transform: scale(1.1);
+        }
+
+        .card_group .txt a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        .card_group .txt a:hover {
+            color: #666;
+        }
+
+        .card_group .txt h3 {
+            margin: 25px 0;
+            font-size: 20px;
+        }
+
+        .card_group .txt p {
+            line-height: 30px;
+            letter-spacing: 3px;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="logo.svg" alt="">
+                </a>
+            </div>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="btn">
+                <div class="user">
+                    <a href="../user/user.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="banner.png" alt="">
+    </div>
+
+    <div class="path">
+        <ul>
+            <li><a href="../index.html">首頁</a></li>
+            <li><a href="place.html">場地推薦</a></li>
+        </ul>
+    </div>
+
+    <section class="place_wrap">
+        <div class="north">
+
+            <input type="checkbox" id="btn_north">
+
+            <div class="control_btn control_north">
+                <label for="btn_north">
+                    <h2>北部地區</h2>
+                    <span>▶</span>
+                </label>
+            </div>
+
+
+            <div class="openarea northarea">
+                <div class="card_group">
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    半島秘境 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新北市石門區下員坑15號<br>
+                                    電話：(02)2636-6757<br>
+                                    服務：豪華露營/泳池/獨立衛浴區<br>
+                                    費用：一泊一食 $4,300 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    愛上喜翁 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新竹縣五峰鄉竹林村4鄰忠興93號<br>
+                                    電話：0933-290-500<br>
+                                    服務：豪華火烤/BBQ/海陸全餐<br>
+                                    費用：一泊二食 $3,750 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="middle">
+            <input type="checkbox" id="btn_middle">
+            <div class="control_btn">
+                <label for="btn_middle">
+                    <h2>中部地區</h2>
+                    <span>▶</span>
+                </label>
+            </div>
+            <div class="openarea">
+                <div class="card_group">
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    半島秘境 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新北市石門區下員坑15號<br>
+                                    電話：(02)2636-6757<br>
+                                    服務：豪華露營/泳池/獨立衛浴區<br>
+                                    費用：一泊一食 $4,300 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    愛上喜翁 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新竹縣五峰鄉竹林村4鄰忠興93號<br>
+                                    電話：0933-290-500<br>
+                                    服務：豪華火烤/BBQ/海陸全餐<br>
+                                    費用：一泊二食 $3,750 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="south">
+            <input type="checkbox" id="btn_south">
+            <div class="control_btn">
+                <label for="btn_south">
+                    <h2>南部地區</h2>
+                    <span>▶</span>
+                </label>
+            </div>
+            <div class="openarea">
+                <div class="card_group">
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    半島秘境 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新北市石門區下員坑15號<br>
+                                    電話：(02)2636-6757<br>
+                                    服務：豪華露營/泳池/獨立衛浴區<br>
+                                    費用：一泊一食 $4,300 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    愛上喜翁 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新竹縣五峰鄉竹林村4鄰忠興93號<br>
+                                    電話：0933-290-500<br>
+                                    服務：豪華火烤/BBQ/海陸全餐<br>
+                                    費用：一泊二食 $3,750 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="east">
+            <input type="checkbox" id="btn_east">
+            <div class="control_btn">
+                <label for="btn_east">
+                    <h2>東部地區</h2>
+                    <span>▶</span>
+                </label>
+            </div>
+            <div class="openarea">
+                <div class="card_group">
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    半島秘境 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新北市石門區下員坑15號<br>
+                                    電話：(02)2636-6757<br>
+                                    服務：豪華露營/泳池/獨立衛浴區<br>
+                                    費用：一泊一食 $4,300 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="pic">
+                            <a href="">
+                                <img src="place2.png" alt="">
+                            </a>
+                        </div>
+                        <div class="txt">
+                            <a href="">
+                                <h3>
+                                    愛上喜翁 營區資訊
+                                </h3>
+                                <p>
+                                    地址：新竹縣五峰鄉竹林村4鄰忠興93號<br>
+                                    電話：0933-290-500<br>
+                                    服務：豪華火烤/BBQ/海陸全餐<br>
+                                    費用：一泊二食 $3,750 起<br>
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="footer_wrap">
+            <a href="../index.html">
+                <div class="logo">
+                    <img src="logo.svg" alt="">
+                </div>
+            </a>
+            <ul>
+                <li><a href="../item/item.html">所有商品</a></li>
+                <li><a href="../rent/rent.html">物品租賃</a></li>
+                <li><a href="../news/news.html">最新消息</a></li>
+                <li><a href="../place/place.html">精選場地</a></li>
+            </ul>
+            <div class="txt">
+                <p>
+                    電話 : 00-0000-0000 / 信箱 : camping@gmail.com<br>
+                    本網站為緯育TibaMe前端工程師專業技術養成班第85期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </div>
+        </div>
+
+    </footer>
+</body>
+
+</html>
