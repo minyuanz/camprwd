@@ -237,7 +237,9 @@ body {
 @media screen and (max-width:768px) {
     nav {
         width: 100%;
-        position: relative;
+        position: fixed;
+        z-index: 5;
+        background-color: #57835E;
     }
 
     nav ul {
@@ -246,9 +248,9 @@ body {
         flex-direction: column;
         top: 100%;
         right: -100%;
-        background-color: #e3e3e3;
+        background-color: #f7f7f7;
         height: calc(100vh - 50px);
-        width: 60%;
+        width: 100%;
         transition: 1s;
     }
 
@@ -381,10 +383,23 @@ body {
     .list_wrap .list_group .list_backcolor .count>div {
         margin-top: 0px;
     }
+    .list_wrap .list_group .list_backcolor .count>div button{
+        border: none;
+        /* cursor: pointer; */
+    }
+
+    .list_wrap .list_group .list_backcolor .del button {
+        margin-bottom: 30px;
+        margin-right: 30px;
+        border: none;
+        cursor: pointer;
+        /* background-color: #f00; */
+    }
 
     .list_wrap .list_group .list_backcolor .del i {
-        font-size: 30px;
-        margin-bottom: 15px;
+        font-size: 20px;
+        /* margin-bottom: 30px; */
+        /* margin-right: 30px; */
     }
 
     .quest_wrap form>div {

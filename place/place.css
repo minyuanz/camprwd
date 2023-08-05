@@ -144,7 +144,9 @@ body {
 
     nav {
         width: 100%;
-        position: relative;
+        position: fixed;
+        z-index: 5;
+        background-color: #57835E;
     }
 
     nav ul {
@@ -153,9 +155,9 @@ body {
         flex-direction: column;
         top: 100%;
         right: -100%;
-        background-color: #e3e3e3;
+        background-color: #f7f7f7;
         height: calc(100vh - 50px);
-        width: 60%;
+        width: 100%;
         transition: 1s;
     }
 
