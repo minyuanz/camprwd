@@ -394,21 +394,57 @@
             console.log(currentindex);
         });
 
-        $("#btnright").click(function () {
-            currentindex++;
-            let width = $(".news").width() + 40;
-            $(".news_group").css("left", `-${width * currentindex}px`);
-            if (currentindex == 4) {
-                $("#btnright").attr("disabled", "true");
-            }
-            $("#btnleft").removeAttr("disabled");
+        if (window.innerWidth < 768) {
+            $("#btnright").click(function () {
+                currentindex++;
+                let width = $(".news").width() + 40;
+                $(".news_group").css("left", `-${width * currentindex}px`);
+                if (currentindex === 5) {
+                    $("#btnright").attr("disabled", "true");
+                }
+                $("#btnleft").removeAttr("disabled");
 
-            console.log(currentindex);
+                console.log(currentindex);
 
-        });
+            })
+        }
+        else if (window.innerWidth < 1200) {
+            $("#btnright").click(function () {
+                currentindex++;
+                let width = $(".news").width() + 40;
+                $(".news_group").css("left", `-${width * currentindex}px`);
+                if (currentindex === 4) {
+                    $("#btnright").attr("disabled", "true");
+                }
+                $("#btnleft").removeAttr("disabled");
+
+                console.log(currentindex);
+
+            })
+        };
 
         //捲動冒出
+        // if (window.innerWidth > 1200) {
+        window.addEventListener("scroll", function () {
+            if (document.documentElement.scrollTop > 100) {
+                document.querySelector(".item_wrap").style.top = "0px";
+                document.querySelector(".item_wrap").style.opacity = "1";
+            };
+            if (document.documentElement.scrollTop > 800) {
+                document.querySelector(".news_wrap").style.top = "0px";
+                document.querySelector(".news_wrap").style.opacity = "1";
+            };
+        });
+        // }
 
+        // $(window).on("scroll", function () {
+        //     if ($(document).scrollTop() > 100) {
+        //         $(".item_wrap").css({
+        //             opacity: 1,
+        //             top:"0px"
+        //         });
+        //     }
+        // });
 
     </script>
 

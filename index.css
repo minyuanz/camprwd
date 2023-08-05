@@ -75,6 +75,9 @@ body {
 .item_wrap {
     width: 100%;
     position: relative;
+    opacity: 0;
+    top: 1000px;
+    transition: 1s;
 }
 
 .item_wrap .txt {
@@ -188,6 +191,11 @@ body {
 .news_wrap {
     width: 100%;
     margin-top: 200px;
+    /* width: 100%; */
+    position: relative;
+    opacity: 0;
+    top: 500px;
+    transition: 1s;
 }
 
 .news_wrap .txt {
@@ -445,6 +453,20 @@ body {
         letter-spacing: 0px;
     }
 
+
+    .item_wrap {
+        /* width: 100%; */
+        /* position: relative; */
+        opacity: 1;
+        top: 0;
+        /* transition: 1s; */
+    }
+
+    .news_wrap {
+        opacity: 1;
+        top: 0;
+    }
+
     .news_wrap .news_group .news {
         /* box-sizing: border-box; */
         /* width: 100%; */
@@ -628,7 +650,7 @@ body {
     .item_wrap .pic {
         display: none;
     }
-    
+
     .news_wrap .news_group {
         width: 600%;
     }
