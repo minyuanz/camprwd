@@ -1,4 +1,3 @@
-
 header {
     background-color: #57835E;
 }
@@ -12,6 +11,15 @@ nav {
     align-items: center;
     /* font-size: 24px; */
     position: relative;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo a img {
+    width: 100%;
+    vertical-align: bottom;
 }
 
 ul {

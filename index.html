@@ -17,6 +17,10 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="index.css">
@@ -191,37 +195,63 @@
                         <img src="img/news2.jpg" alt="">
                     </div>
                     <div class="txt">
-                        <span>2023.07.26</span>
-                        <p>暑期限定！ 7月1日至7月10日期間， 享購物優惠85折！</p>
+                        <span>2023.07.20</span>
+                        <p>給新手的露營指南，第一次露營要帶什麼？</p>
                     </div>
                 </a>
             </div>
             <div class="news news3">
                 <a href="news/news-rwd.html">
                     <div class="pic">
-                        <img src="img/news2.jpg" alt="">
+                        <img src="img/news3.jpg" alt="">
                     </div>
                     <div class="txt">
-                        <span>2023.07.26</span>
-                        <p>暑期限定！ 7月1日至7月10日期間， 享購物優惠85折！</p>
+                        <span>2023.07.10</span>
+                        <p>第一次買露營裝備，不知從何下手嗎？！</p>
                     </div>
                 </a>
             </div>
             <div class="news news4">
                 <a href="news/news-rwd.html">
                     <div class="pic">
-                        <img src="img/news1.jpg" alt="">
+                        <img src="img/news4.jpg" alt="">
                     </div>
                     <div class="txt">
-                        <span>2023.07.26</span>
-                        <p>暑期限定！ 7月1日至7月10日期間， 享購物優惠85折！</p>
+                        <span>2023.07.01</span>
+                        <p>露營工具保養法則！</p>
+                    </div>
+                </a>
+            </div>
+            <div class="news news5">
+                <a href="news/news-rwd.html">
+                    <div class="pic">
+                        <img src="img/news5.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <span>2023.06.26</span>
+                        <p>露營食譜分享！</p>
+                    </div>
+                </a>
+            </div>
+            <div class="news news6">
+                <a href="news/news-rwd.html">
+                    <div class="pic">
+                        <img src="img/news6.jpg" alt="">
+                    </div>
+                    <div class="txt">
+                        <span>2023.06.20</span>
+                        <p>冬天露營如何保暖，防寒3大秘笈</p>
                     </div>
                 </a>
             </div>
         </div>
 
-        <!-- <button><</button> -->
-        <!-- <button>></button> -->
+        <button id="btnleft" disabled="true">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button id="btnright">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
     </section>
 
 
@@ -346,6 +376,43 @@
         }
 	// ]]>
     </script>
+
+    <script>
+
+        //按鈕左右輪播
+        let currentindex = 0;
+        $("#btnleft").click(function () {
+            $("#btnright").removeAttr("disabled");
+            currentindex--;
+            let width = $(".news").width() + 40;
+            // console.log(width);
+            $(".news_group").css("left", `-${width * currentindex}px`);
+            if (currentindex == 0) {
+                $("#btnleft").attr("disabled", "true");
+            }
+
+            console.log(currentindex);
+        });
+
+        $("#btnright").click(function () {
+            currentindex++;
+            let width = $(".news").width() + 40;
+            $(".news_group").css("left", `-${width * currentindex}px`);
+            if (currentindex == 4) {
+                $("#btnright").attr("disabled", "true");
+            }
+            $("#btnleft").removeAttr("disabled");
+
+            console.log(currentindex);
+
+        });
+
+        //捲動冒出
+
+
+    </script>
+
+
 </body>
 
 </html>
