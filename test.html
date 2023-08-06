@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        .items {
+            position: relative;
+            width: 100%;
+            overflow-x: scroll;
+            /* overflow-y: hidden; */
+            white-space: nowrap;
+            transition: all 0.2s;
+            transform: scale(0.98);
+            will-change: transform;
+            user-select: none;
+            cursor: pointer;
+            /* display: flex; */
+        }
+
+        .item {
+            display: inline-block;
+            background: skyblue;
+            height: 250px;
+            width: 400px;
+            margin: 2em 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="items">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+        <div class="item item6"></div>
+        <div class="item item7"></div>
+        <div class="item item8"></div>
+        <div class="item item9"></div>
+        <div class="item item10"></div>
+    </div>
+</body>
+
+<script>
+    // let slider = document.querySelector(".items");
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    // console.log(isDown);
+
+    // slider.addEventListener("mousedown", function (e) {
+    //     slider.style.cursor = "grab";
+    //     isDown = true;
+    //     startX = e.pageX - slider.offsetLeft;
+    //     scrollLeft = slider.scrollLeft;
+    // });
+
+    $(".items").mousedown(function (e) {
+        isDown = true;
+        startX = e.pageX - this.offsetLeft;
+        scrollLeft = this.scrollLeft;
+
+    });
+
+
+    // slider.addEventListener("mouseleave", function () {
+    //     isDown = false;
+    // });
+
+    $(".items").mouseleave(function(){
+        isDown=false;
+    });
+
+    // slider.addEventListener("mouseup", function () {
+    //     isDown = false;
+    //     slider.style.cursor = "pointer";
+    // });
+
+    $(".items").mouseup(function(){
+        isDown=false;
+    });
+    // slider.addEventListener("mousemove", function (e) {
+    //     if (!isDown) return;
+    //     e.preventDefault;
+    //     let x = e.pageX - slider.offsetLeft;
+    //     let walk = x - startX;
+    //     slider.scrollLeft = scrollLeft - walk;
+    // });
+
+    $(".items").mousemove(function(e){
+        if(isDown != true){
+            return;
+        };
+        e.preventDefault;
+        let x=e.pageX - this.offsetLeft;
+        let walk = x - startX;
+        this.scrollLeft = scrollLeft - walk;
+    });
+</script>
+
+</html>

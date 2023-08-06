@@ -211,40 +211,40 @@
 
 
     <script>
-        if (window.innerWidth>1200) {
-            $(window).on("scroll", function () {
-                if ($(document).scrollTop() > 50) {
-                    $(".news1").animate({
-                        left: "0px"
-                    }, 1000);
-                };
-                if ($(document).scrollTop() > 100) {
-                    $(".news2").animate({
-                        left: "0px"
-                    }, 1500);
-                };
-                if ($(document).scrollTop() > 150) {
-                    $(".news3").animate({
-                        left: "0px"
-                    }, 2000);
-                };
-                if ($(document).scrollTop() > 200) {
-                    $(".news4").animate({
-                        left: "0px"
-                    }, 2500);
-                };
-                if ($(document).scrollTop() > 250) {
-                    $(".news5").animate({
-                        left: "0px"
-                    }, 3000);
-                };
-                if ($(document).scrollTop() > 300) {
-                    $(".news6").animate({
-                        left: "0px"
-                    }, 3500);
-                };
-            });
-        };
+        // if (window.innerWidth>1200) {
+        $(window).on("scroll", function () {
+            if ($(document).scrollTop() > 50) {
+                $(".news1").animate({
+                    left: "0px"
+                }, 1000);
+            };
+            if ($(document).scrollTop() > 100) {
+                $(".news2").animate({
+                    left: "0px"
+                }, 1500);
+            };
+            if ($(document).scrollTop() > 150) {
+                $(".news3").animate({
+                    left: "0px"
+                }, 2000);
+            };
+            if ($(document).scrollTop() > 200) {
+                $(".news4").animate({
+                    left: "0px"
+                }, 2500);
+            };
+            if ($(document).scrollTop() > 250) {
+                $(".news5").animate({
+                    left: "0px"
+                }, 3000);
+            };
+            if ($(document).scrollTop() > 300) {
+                $(".news6").animate({
+                    left: "0px"
+                }, 3500);
+            };
+        });
+        // };
     </script>
 </body>
 
