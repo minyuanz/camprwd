@@ -185,12 +185,21 @@ body {
     padding: 5px 10px;
     margin: 0 10px;
 }
+.list_wrap .list_group .list_backcolor .count button {
+    border:none;
+    /* cursor: pointer; */
+}
 
 .list_wrap .list_group .list_backcolor .del {
     /* border: 1px solid red; */
     align-self: center;
-    margin-top: 50px;
+    margin-top: 45px;
     margin-left: 30px;
+}
+.list_wrap .list_group .list_backcolor .del button{
+    cursor: pointer;
+    border:none;
+
 }
 
 .list_wrap .list_group .list_backcolor .del i {
@@ -383,16 +392,10 @@ body {
     .list_wrap .list_group .list_backcolor .count>div {
         margin-top: 0px;
     }
-    .list_wrap .list_group .list_backcolor .count>div button{
-        border: none;
-        /* cursor: pointer; */
-    }
 
     .list_wrap .list_group .list_backcolor .del button {
         margin-bottom: 30px;
         margin-right: 30px;
-        border: none;
-        cursor: pointer;
         /* background-color: #f00; */
     }
 
