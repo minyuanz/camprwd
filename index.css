@@ -17,11 +17,31 @@ body {
 
 .banner {
     position: relative;
+    /* width: 3000px; */
+
 }
+
+.banner .slider-wrap {
+    /* display: flex; */
+    /* display: flex; */
+    /* height: 90vh; */
+    /* width: 3000px; */
+    /* flex-wrap: wrap; */
+    /* flex-wrap: nowrap; */
+}
+
+.banner .slider-wrap .slider-container {
+    display: flex;
+    width: 300%;
+    /* height: 900px; */
+}
+
+.banner .slider-wrap .slidepic {}
 
 .banner .slider-wrap img {
     width: 100%;
     vertical-align: bottom;
+    /* position: absolute; */
 }
 
 .banner .slogan {
@@ -453,6 +473,9 @@ body {
         letter-spacing: 0px;
     }
 
+    .banner .slider-wrap .slider-container {
+        /* height: 550px; */
+    }
 
     .item_wrap {
         /* width: 100%; */
@@ -634,9 +657,19 @@ body {
         right: 0;
     }
 
+    .banner .slider-wrap .slider-container {
+        /* height: 0; */
+    }
+
+    .banner {
+        margin-top: 40px;
+    }
+
     .banner .slider-wrap img {
-        width: 100%;
-        vertical-align: bottom;
+        /* width: 100%; */
+        /* vertical-align: bottom; */
+        /* position: relative; */
+        /* left: -30%; */
     }
 
     .banner .slogan h1 {

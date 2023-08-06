@@ -70,11 +70,11 @@ body {
     margin-bottom: 50px;
     padding-bottom: 30px;
     border-bottom: 1px solid #aaa;
-    /* border-radius: 20px; */
-    /* overflow: hidden; */
+    position: relative;
+    left: -150%;
+
 }
 
-.news_wrap .news .pic {}
 
 .news_wrap .news .pic a img {
     /* width: 100%; */
@@ -125,6 +125,7 @@ body {
         margin: 15px;
         border-radius: 20px;
         padding-bottom: 0;
+        left: 0;
     }
 
     .news_wrap .news .pic a img {

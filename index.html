@@ -74,18 +74,19 @@
     <div class="banner">
 
         <div class="slider-wrap">
-            <div class="pic slider-container">
-                <!-- <div>
+            <div class="slider-container">
+                <div class="slidepic">
                     <img src="img/banner2.png" alt="">
-                </div> -->
-                <!-- <div>
+                </div>
+                <div class="slidepic">
                     <img src="img/banner1.png" alt="">
-                </div> -->
-                <div>
+                </div>
+                <div class="slidepic">
                     <img src="img/banner.png" alt="">
                 </div>
             </div>
         </div>
+
         <div class="slogan">
             <img src="img/logo.svg" alt="">
             <h1>與森林為友，與湖泊為伴<br>
@@ -379,6 +380,18 @@
 
     <script>
 
+        //banner輪播
+        let slidercontainer = document.querySelectorAll(".slider-container");
+        let slidepic = document.getElementsByClassName("slidepic");
+
+        function auto() {
+            slidercontainer[0].appendChild(slidepic[0]);
+        };
+
+        setInterval(auto, 2000);
+        // auto();
+
+
         //按鈕左右輪播
         let currentindex = 0;
         $("#btnleft").click(function () {
@@ -422,6 +435,7 @@
 
             })
         };
+        
 
         //捲動冒出
         // if (window.innerWidth > 1200) {
@@ -446,6 +460,8 @@
         //     }
         // });
 
+
+        //點擊滑動
     </script>
 
 
