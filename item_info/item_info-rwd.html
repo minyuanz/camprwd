@@ -128,7 +128,7 @@
 
                 <div class="moreinfo">
                     <div class="moreinfo_btn">
-                        <label for="pay" id="pay">
+                        <label for="pay" id="btnpay">
                             <span>送貨及付款方式</span>
                             <i class="fa-solid fa-plus"></i>
                         </label>
@@ -139,7 +139,7 @@
                         2. 超商貨到付款
                     </p>
                     <div class="moreinfo_btn">
-                        <label for="cust" id="cust">
+                        <label for="cust" id="btncust">
                             <span>顧客評價</span>
                             <i class="fa-solid fa-plus"></i>
                         </label>
@@ -229,28 +229,43 @@
         }
 
         //checkbox
-        let paybtn = document.getElementById("pay");
-        let pay = document.getElementsByClassName("pay");
-        let custbtn = document.getElementById("cust");
-        let cust = document.getElementsByClassName("cust");
 
-        paybtn.addEventListener("click", function () {
-            if (pay[0].style.display == "block") {
-                pay[0].style.display = "none";
-            }
-            else {
-                pay[0].style.display = "block";
-            }
-        }, false);
 
-        custbtn.addEventListener("click", function () {
-            if (cust[0].style.display == "none") {
-                cust[0].style.display = "block";
-            }
-            else {
-                cust[0].style.display = "none";
-            }
-        }, false);
+        $("#btnpay").on("click", function () {
+            $(".pay").slideToggle()
+        });
+
+        $("#btncust").on("click", function () {
+            $(".cust").slideToggle()
+        });
+        // let paybtn = document.getElementById("pay");
+        // let pay = document.getElementsByClassName("pay");
+        // let custbtn = document.getElementById("cust");
+        // let cust = document.getElementsByClassName("cust");
+
+        // paybtn.addEventListener("click", function () {
+        //     if (pay[0].style.display == "block") {
+        //         pay[0].style.display = "none";
+        //     }
+        //     else {
+        //         pay[0].style.display = "block";
+        //     }
+        // }, false);
+
+        // custbtn.addEventListener("click", function () {
+        //     if (cust[0].style.display == "none") {
+        //         cust[0].style.display = "block";
+        //     }
+        //     else {
+        //         cust[0].style.display = "none";
+        //     }
+        // }, false);
+
+
+
+        //localStorage
+
+
     </script>
 </body>
 
