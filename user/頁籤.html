@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>頁籤</title>
+
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        .tab_block{
+            /* border: 1px solid red; */
+        }
+        .tab_block .tab_list{}
+        .tab_block .tab_list .list{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+
+        }
+        .tab_block .list li{
+            display: inline-block;
+            margin-left: 20px;
+            /* padding:10px; */
+        }
+        .tab_block .tab_list .list li{}
+        .tab_block .tab_list .list li a{
+            text-decoration: none;
+            color: #ccc;
+            background-color: white;
+            display: inline-block;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .tab_block .tab_list .list li a.-on{
+            background-color: black;
+            color: white;
+            border: 1px solid black;
+            border-bottom: 0;
+
+        }
+        .tab_txt{
+            border: 1px solid black;
+            border-radius: 10px;
+            /* padding: 10px; */
+
+        }
+       
+        .tab_txt .tab{
+            padding: 10px;
+            display: none;
+        }
+
+        .tab_txt .tab.-on{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>頁籤</h1>
+
+    <div class="tab_block">
+        
+        <div class="tab_list">
+            <ul class="list">
+                <li><a href="#" data-target="txt1" class="tab -on">頁籤一</a></li>
+                <li><a href="#" data-target="txt2" class="tab">頁籤二</a></li>
+                <li><a href="#" data-target="txt3" class="tab">頁籤三</a></li>
+            </ul>
+        </div>
+
+
+
+        <div class="tab_txt">
+            <div class="tab txt1 -on">
+                頁籤一的內容
+                <br>
+                第二行
+            </div>
+
+            <div class="tab txt2">
+                頁籤二的內容
+            </div>
+
+            <div class="tab txt3">
+                頁籤三的內容
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script> 
+    <script>
+        $("a.tab").on("click", function(e){
+            e.preventDefault();
+
+            $(this).closest("ul").find("a.tab").removeClass("-on");
+            $(this).addClass("-on");
+
+            // 內容
+            var el = $(this).closest(".tab_block");
+            $(el).find("div.tab").removeClass("-on");
+            $(el).find(".tab." + $(this).attr("data-target")).addClass("-on");
+
+        });
+
+        
+
+        
+        
+    </script>
+</body>
+</html>
