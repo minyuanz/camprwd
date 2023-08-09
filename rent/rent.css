@@ -184,6 +184,8 @@ body {
     width: 100px;
     padding: 5px 10px;
     margin: 0 10px;
+    border:1px solid #333;
+
 }
 .list_wrap .list_group .list_backcolor .count button {
     border:none;
@@ -241,6 +243,11 @@ body {
 
 .quest_wrap form input {
     padding: 5px 10px;
+    border:1px solid #333;
+}
+.quest_wrap form textarea {
+    border:1px solid #333;
+
 }
 
 @media screen and (max-width:768px) {

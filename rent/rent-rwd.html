@@ -216,6 +216,8 @@
 
 
     <script>
+
+        //加減數字、刪除
         $(".btnPlus").on("click", function () {
             let value = $(".countValue").attr("value");
             // console.log(value);
@@ -227,14 +229,33 @@
             let value = $(".countValue").attr("value");
             // console.log(value);
             value--;
-            if(value >=0){
+            if (value >= 0) {
                 $(".countValue").attr("value", value--)
             }
         });
 
-        $(".btnDel").on("click", function(){
+        $(".btnDel").on("click", function () {
             $(".list_group").css("display", "none");
         });
+
+        //表單框focus
+        $("input").focus(function(){
+            $(this).css("backgroundColor","#FFFFCC")
+        }).blur(function(){
+            $(this).css({
+                backgroundColor: "#fff",
+                // border:"1px solid #333"   
+            })
+        });
+
+        $("textarea").focus(function(){
+            $(this).css("backgroundColor","#FFFFCC")
+        }).blur(function(){
+            $(this).css({
+                backgroundColor: "#fff",
+                // border:"1px solid #333"   
+            })
+        })
     </script>
 </body>
 

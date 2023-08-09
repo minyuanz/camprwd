@@ -76,13 +76,13 @@
         <div class="slider-wrap">
             <div class="slider-container">
                 <div class="slidepic slide1">
-                    <img src="img/banner2.png" alt="">
+                    <img src="img/banner.jpg" alt="">
                 </div>
                 <div class="slidepic slide2">
-                    <img src="img/banner1.png" alt="">
+                    <img src="img/banner1.jpg" alt="">
                 </div>
                 <div class="slidepic slide3">
-                    <img src="img/banner.png" alt="">
+                    <img src="img/banner2.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -169,7 +169,7 @@
 
         </div>
         <div class="pic">
-            <img src="img/itemimg.png" alt="">
+            <img src="img/banner1.jpg" alt="">
         </div>
     </section>
 
@@ -265,7 +265,7 @@
                 <div class="place">
                     <a href="place/place-rwd.html">
                         <div class="pic">
-                            <img src="img/north.png" alt="">
+                            <img src="img/north.jpg" alt="">
                         </div>
                         <div class="txt">
                             <p>北部地區</p>
@@ -275,7 +275,7 @@
                 <div class="place">
                     <a href="place/place-rwd.html">
                         <div class="pic">
-                            <img src="img/middle.png" alt="">
+                            <img src="img/middle.jpg" alt="">
                         </div>
                         <div class="txt">
                             <p>中部地區</p>
@@ -285,7 +285,7 @@
                 <div class="place">
                     <a href="place/place-rwd.html">
                         <div class="pic">
-                            <img src="img/south.png" alt="">
+                            <img src="img/south.jpg" alt="">
                         </div>
                         <div class="txt">
                             <p>南部地區</p>
@@ -295,7 +295,7 @@
                 <div class="place">
                     <a href="place/place-rwd.html">
                         <div class="pic">
-                            <img src="img/east.png" alt="">
+                            <img src="img/east.jpg" alt="">
                         </div>
                         <div class="txt">
                             <p>東部地區</p>
@@ -305,7 +305,7 @@
             </div>
         </div>
         <div class="pic">
-            <img src="img/placeimg.png" alt="">
+            <img src="img/banner2.jpg" alt="">
         </div>
     </section>
 
@@ -381,29 +381,29 @@
     <script>
 
         //banner輪播
-        // let slidercontainer = document.querySelectorAll(".slider-container");
-        // let slidepic = document.getElementsByClassName("slidepic");
+        let divWidth=$(".slider-container").width() / 3;
+        let imgCount=$(".slidepic").length;
 
-        // function auto() {
-        //     slidercontainer[0].appendChild(slidepic[0]);
-        // };
-        // setInterval(auto, 2000);
+        console.log(divWidth);
+        console.log(imgCount);
 
+        let index =0;
 
+        function moveToNext(){
+            if(index < imgCount -1){
+                index++;
+            }
+            else{
+                index = 0;
+            };
 
+            $(".slider-container").animate({
+                left :index * divWidth * -1
+            });
+        };
 
-        // function auto() {
-        //     // $(".slidepic").css("left","0")
-        //     $(".slidepic").animate({
-        //         left: "-100%",
-        //         left: "-200%"
-        //     },3000);
-        // };
-        // auto();
-        // setInterval(auto, 3000);
-
-
-
+        setInterval(moveToNext,2000);
+        // moveToNext();
         //按鈕左右輪播
         let currentindex = 0;
         $("#btnleft").click(function () {
@@ -474,36 +474,36 @@
 
 
         //點擊滑動
-        let isDown = false;
-        let startX;
-        let scrollLeft;
+        // let isDown = false;
+        // let startX;
+        // let scrollLeft;
 
-        $(".news_group").mousedown(function (e) {
-            isDown = true;
-            console.log(e.pageX);
-            // startX = e.pageX - this.offsetLeft;
-            // scrollLeft = this.scrollLeft;
-        });
+        // $(".news_group").mousedown(function (e) {
+        //     isDown = true;
+        //     console.log(e.pageX);
+        //     // startX = e.pageX - this.offsetLeft;
+        //     // scrollLeft = this.scrollLeft;
+        // });
 
-        $(".news_group").mouseleave(function () {
-            isDown = false;
-        });
+        // $(".news_group").mouseleave(function () {
+        //     isDown = false;
+        // });
 
-        $(".news_group").mouseup(function () {
-            isDown = false;
-        });
+        // $(".news_group").mouseup(function () {
+        //     isDown = false;
+        // });
 
-        $(".news_group").mousemove(function (e) {
-            if (isDown != true) {
-                return;
-            };
+        // $(".news_group").mousemove(function (e) {
+        //     if (isDown != true) {
+        //         return;
+        //     };
 
-            e.preventDefault;
-            let x = e.pageX - this.offsetLeft;
-            let walk = x - startX;
-            this.scrollLeft = scrollLeft - walk;
+        //     e.preventDefault;
+        //     let x = e.pageX - this.offsetLeft;
+        //     let walk = x - startX;
+        //     this.scrollLeft = scrollLeft - walk;
 
-        });
+        // });
     </script>
 
 
