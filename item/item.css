@@ -103,6 +103,9 @@ select {
     padding: 10px 20px;
     background-color: #eee;
 }
+.sort ul li a:hover {
+    color:#666;
+}
 
 .item_wrap .item_group {
     width: 80%;

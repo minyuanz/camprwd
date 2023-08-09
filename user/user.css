@@ -233,6 +233,9 @@ section input:focus {
         right: 0;
     }
 
+    .banner{
+        margin-top: 60px;
+    }
     .footer_wrap ul a {
         font-size: 12px;
     }

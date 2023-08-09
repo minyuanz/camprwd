@@ -16,6 +16,12 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+        integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="place.css">
@@ -142,7 +148,7 @@
                     <span id="arrmiddle">▶</span>
                 </label>
             </div>
-            <div class="openarea">
+            <div class="openarea middlearea">
                 <div class="card_group">
                     <div class="card">
                         <div class="pic">
@@ -193,7 +199,7 @@
                     <span id="arrsouth">▶</span>
                 </label>
             </div>
-            <div class="openarea">
+            <div class="openarea southarea">
                 <div class="card_group">
                     <div class="card">
                         <div class="pic">
@@ -241,10 +247,10 @@
             <div class="control_btn">
                 <label for="btn_east" id="east">
                     <h2>東部地區</h2>
-                    <span id ="arreast">▶</span>
+                    <span id="arreast">▶</span>
                 </label>
             </div>
-            <div class="openarea">
+            <div class="openarea eastarea">
                 <div class="card_group">
                     <div class="card">
                         <div class="pic">
@@ -314,66 +320,83 @@
     </footer>
 
     <script>
-        let north = document.getElementById("north");
-        let middle = document.getElementById("middle");
-        let south = document.getElementById("south");
-        let east = document.getElementById("east");
-        let openarea = document.getElementsByClassName
-        ("openarea");
-        let arrnorth=document.getElementById("arrnorth");
-        let arrmiddle=document.getElementById("arrmiddle");
-        let arrsouth=document.getElementById("arrsouth");
-        let arreast=document.getElementById("arreast");
-
-        north.addEventListener("click", function () {
-            if (openarea[0].style.display == "block") {
-                openarea[0].style.display = "none";
-                arrnorth.style.rotate="360deg";
-            }
-            else {
-                openarea[0].style.display = "block";
-                arrnorth.style.rotate="180deg";
-            }
-        }, false);
-
-        console.log(openarea.length);
+        $("#north").on("click", function () {
+            $(".northarea").slideToggle(500)
+        });
+        $("#middle").on("click", function () {
+            $(".middlearea").slideToggle(500)
+        });
+        $("#south").on("click", function () {
+            $(".southarea").slideToggle(500)
+        });
+        $("#east").on("click", function () {
+            $(".eastarea").slideToggle(500)
+        });
 
 
-        function openbox1() {
-            if (openarea[1].style.display == "none") {
-                openarea[1].style.display = "block";
-                arrmiddle.style.rotate="180deg";
-            }
-            else {
-                openarea[1].style.display = "none";
-                arrmiddle.style.rotate="360deg";
-            }
-        }
 
-        function openbox2() {
-            if (openarea[2].style.display == "none") {
-                openarea[2].style.display = "block";
-                arrsouth.style.rotate="180deg";
-            }
-            else {
-                openarea[2].style.display = "none";
-                arrsouth.style.rotate="360deg";
-            }
-        }
 
-        function openbox3() {
-            if (openarea[3].style.display == "none") {
-                openarea[3].style.display = "block";
-                arreast.style.rotate="180deg";
-            }
-            else {
-                openarea[3].style.display = "none";
-                arreast.style.rotate="360deg";
-            }
-        }
-        middle.addEventListener("click", openbox1, false);
-        south.addEventListener("click", openbox2, false);
-        east.addEventListener("click", openbox3, false);
+
+        // let north = document.getElementById("north");
+        // let middle = document.getElementById("middle");
+        // let south = document.getElementById("south");
+        // let east = document.getElementById("east");
+        // let openarea = document.getElementsByClassName
+        // ("openarea");
+        // let arrnorth=document.getElementById("arrnorth");
+        // let arrmiddle=document.getElementById("arrmiddle");
+        // let arrsouth=document.getElementById("arrsouth");
+        // let arreast=document.getElementById("arreast");
+
+        // north.addEventListener("click", function () {
+        //     if (openarea[0].style.display == "block") {
+        //         openarea[0].style.display = "none";
+        //         arrnorth.style.rotate="360deg";
+        //     }
+        //     else {
+        //         openarea[0].style.display = "block";
+        //         arrnorth.style.rotate="180deg";
+        //     }
+        // }, false);
+
+        // console.log(openarea.length);
+
+
+        // function openbox1() {
+        //     if (openarea[1].style.display == "none") {
+        //         openarea[1].style.display = "block";
+        //         arrmiddle.style.rotate="180deg";
+        //     }
+        //     else {
+        //         openarea[1].style.display = "none";
+        //         arrmiddle.style.rotate="360deg";
+        //     }
+        // }
+
+        // function openbox2() {
+        //     if (openarea[2].style.display == "none") {
+        //         openarea[2].style.display = "block";
+        //         arrsouth.style.rotate="180deg";
+        //     }
+        //     else {
+        //         openarea[2].style.display = "none";
+        //         arrsouth.style.rotate="360deg";
+        //     }
+        // }
+
+        // function openbox3() {
+        //     if (openarea[3].style.display == "none") {
+        //         openarea[3].style.display = "block";
+        //         arreast.style.rotate="180deg";
+        //     }
+        //     else {
+        //         openarea[3].style.display = "none";
+        //         arreast.style.rotate="360deg";
+        //     }
+        // }
+        // middle.addEventListener("click", openbox1, false);
+        // south.addEventListener("click", openbox2, false);
+        // east.addEventListener("click", openbox3, false);
     </script>
 </body>
 
