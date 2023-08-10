@@ -105,7 +105,7 @@
         </div>
     </div>
 
-    <section class="item_wrap">
+    <section class="item_wrap slideIn">
         <div class="txt">
             <h2>裝備 / 器材租賃</h2>
             <span>沒有最好的裝備，只有最適合的裝備。Let’s gear up！</span>
@@ -176,7 +176,7 @@
         </div>
     </section>
 
-    <section class="news_wrap">
+    <section class="news_wrap slideIn">
         <div class="txt">
             <h2>最新消息</h2>
         </div>
@@ -380,144 +380,7 @@
         }
 	// ]]>
     </script>
-
-    <script>
-
-        //banner輪播
-        let divWidth = $(".slider-container").width() / 4;
-        let imgCount = $(".slidepic").length;
-
-        // console.log(divWidth);
-        // console.log(imgCount);
-
-        let index = 0;
-
-        function moveToNext() {
-            if (index < imgCount - 1) {
-                index++;
-            }
-            else if (index == 3) {
-                index = 0;
-                $(".slider-container").css("left", "0");
-            };
-            $(".slider-container").animate({
-                left: index * divWidth * -1
-            });
-            console.log(index);
-        };
-
-        setInterval(moveToNext, 2000);
-        // moveToNext();
-        //按鈕左右輪播
-        let currentindex = 0;
-        $("#btnleft").click(function () {
-            $("#btnright").removeAttr("disabled");
-            currentindex--;
-            let width = $(".news").width() + 40;
-            // console.log(width);
-            $(".news_group").css("left", `-${width * currentindex}px`);
-            if (currentindex == 0) {
-                $("#btnleft").attr("disabled", "true");
-            }
-
-            console.log(currentindex);
-        });
-
-        if (window.innerWidth < 768) {
-            $("#btnright").click(function () {
-                currentindex++;
-                let width = $(".news").width() + 40;
-                $(".news_group").css("left", `-${width * currentindex}px`);
-                if (currentindex === 5) {
-                    $("#btnright").attr("disabled", "true");
-                }
-                $("#btnleft").removeAttr("disabled");
-
-                console.log(currentindex);
-
-            });
-        }
-        else if (window.innerWidth < 1200) {
-            $("#btnright").click(function () {
-                currentindex++;
-                let width = $(".news").width() + 40;
-                $(".news_group").css("left", `-${width * currentindex}px`);
-                if (currentindex === 4) {
-                    $("#btnright").attr("disabled", "true");
-                }
-                $("#btnleft").removeAttr("disabled");
-
-                console.log(currentindex);
-
-            })
-        };
-
-        //page2top
-        $(".page2top").on("click", function (e) {
-            e.preventDefault();
-            $("html, body").animate({
-                scrollTop: 0
-            }, 700)
-
-        });
-
-        //捲動冒出
-        if (window.innerWidth < 768) {
-            window.addEventListener("scroll", function () {
-                if (document.documentElement.scrollTop > 300) {
-                    document.querySelector(".news_wrap").style.top = "0px";
-                    document.querySelector(".news_wrap").style.opacity = "1";
-                };
-            });
-        }
-        else {
-            window.addEventListener("scroll", function () {
-                if (document.documentElement.scrollTop > 100) {
-                    document.querySelector(".item_wrap").style.top = "0px";
-                    document.querySelector(".item_wrap").style.opacity = "1";
-                };
-                if (document.documentElement.scrollTop > 800) {
-                    document.querySelector(".news_wrap").style.top = "0px";
-                    document.querySelector(".news_wrap").style.opacity = "1";
-                };
-
-                // console.log(window.innerHeight)
-            });
-        }
-
-
-        //點擊滑動
-        // let isDown = false;
-        // let startX;
-        // let scrollLeft;
-
-        // $(".news_group").mousedown(function (e) {
-        //     isDown = true;
-        //     console.log(e.pageX);
-        //     // startX = e.pageX - this.offsetLeft;
-        //     // scrollLeft = this.scrollLeft;
-        // });
-
-        // $(".news_group").mouseleave(function () {
-        //     isDown = false;
-        // });
-
-        // $(".news_group").mouseup(function () {
-        //     isDown = false;
-        // });
-
-        // $(".news_group").mousemove(function (e) {
-        //     if (isDown != true) {
-        //         return;
-        //     };
-
-        //     e.preventDefault;
-        //     let x = e.pageX - this.offsetLeft;
-        //     let walk = x - startX;
-        //     this.scrollLeft = scrollLeft - walk;
-
-        // });
-    </script>
+<script src="index.js"></script>
 
 
 </body>
