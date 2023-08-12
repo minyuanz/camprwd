@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="item_info.css">
+    
     <title>商品介紹|好享營</title>
 </head>
 
@@ -213,60 +214,7 @@
 
     </footer>
 
-
-    <script>
-        //小圖換大圖
-        let large = document.getElementById("large");
-        let smalls = document.getElementsByClassName("small");
-
-        function showlarge(e) {
-            large.src = e.target.src;
-        }
-
-        for (let i = 0; i < smalls.length; i++) {
-            // smalls[i].onclick=showlarge;
-            smalls[i].addEventListener("click", showlarge, false);
-        }
-
-        //checkbox
-
-
-        $("#btnpay").on("click", function () {
-            $(".pay").slideToggle()
-        });
-
-        $("#btncust").on("click", function () {
-            $(".cust").slideToggle()
-        });
-        // let paybtn = document.getElementById("pay");
-        // let pay = document.getElementsByClassName("pay");
-        // let custbtn = document.getElementById("cust");
-        // let cust = document.getElementsByClassName("cust");
-
-        // paybtn.addEventListener("click", function () {
-        //     if (pay[0].style.display == "block") {
-        //         pay[0].style.display = "none";
-        //     }
-        //     else {
-        //         pay[0].style.display = "block";
-        //     }
-        // }, false);
-
-        // custbtn.addEventListener("click", function () {
-        //     if (cust[0].style.display == "none") {
-        //         cust[0].style.display = "block";
-        //     }
-        //     else {
-        //         cust[0].style.display = "none";
-        //     }
-        // }, false);
-
-
-
-        //localStorage
-
-
-    </script>
+    <script src="item-info.js"></script>
 </body>
 
 </html>

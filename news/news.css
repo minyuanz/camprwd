@@ -58,6 +58,20 @@ body {
     font-size: 12px;
 }
 
+.slideIn {
+    transform: translateX(-500px);
+    opacity: 0;
+    transition: 1s;
+    /* border: 1px solid red; */
+}
+
+.active {
+    transform: translateX(0px);
+    opacity: 1;
+    transition: 1s;
+
+}
+
 .news_wrap {
     width: 80%;
     margin: auto;
@@ -71,7 +85,7 @@ body {
     padding-bottom: 30px;
     border-bottom: 1px solid #aaa;
     position: relative;
-    left: -150%;
+    /* left: -150%; */
 
 }
 
