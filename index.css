@@ -17,7 +17,9 @@ body {
 
 .banner {
     position: relative;
+    width: 100%;
     /* width: 3000px; */
+    /* height: 800px; */
 
 }
 
@@ -35,7 +37,7 @@ body {
 .banner .slider-wrap .slider-container {
     display: flex;
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     /* position: relative; */
     /* height: 900px; */
 }
@@ -47,6 +49,8 @@ body {
 
 .banner .slider-wrap img {
     /* width: 100%; */
+    /* width: 1920px; */
+    /* height: 800px; */
     vertical-align: bottom;
     /* position: absolute; */
 }

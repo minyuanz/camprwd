@@ -23,3 +23,49 @@
         $(".cust").slideToggle()
     });
 })
+
+//點擊滑動
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    $(".product").mousedown(function (e) {
+        // e.preventDefault;
+
+        isDown = true;
+        console.log(e.pageX);
+        startX = e.pageX - this.offsetLeft;
+        // console.log(this.offsetLeft);
+
+        console.log(startX);
+        scrollLeft = this.scrollLeft;
+        // console.log(scrollLeft);
+
+    });
+
+    $(".product").mouseleave(function () {
+        // e.preventDefault;
+        isDown = false;
+    });
+
+    $(".product").mouseup(function () {
+        // e.preventDefault;
+        isDown = false;
+    });
+
+    $(".product").mousemove(function (e) {
+        if (isDown != true) {
+            return;
+        };
+
+        // e.preventDefault;
+        let x = e.pageX - this.offsetLeft;
+        let walk = x - startX;
+        this.scrollLeft = scrollLeft - walk;
+
+    });
+
+    // $(".item").mousedown(function(e){
+    //     e.preventDefault;
+
+    // });
