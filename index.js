@@ -2,29 +2,33 @@ $(document).ready(function () {
 
 
     //banner輪播
+
+
     let divWidth = $(".slider-container").width();
     let imgCount = $(".slidepic").length;
     let index = 0;
 
     function moveToNext() {
-        if (index < imgCount - 1 ) {
+        if (index < imgCount - 1) {
             index++;
             $(".slider-container").animate({
                 left: index * divWidth * -1
-            }, 2500, "linear")
+            }, 2000, "linear")
         }
         else if (index == 3) {
-           index = 0;
-           $(".slider-container").css({
-               left: 0
-           });
-        //    $(".slide4").attr("src", "img/banner2.jpg")
-           // auto()
-        //    clearInterval(auto);
-       };
+            index = 0;
+            $(".slider-container").css({
+                left: 0
+            });
+            //    $(".slide4").attr("src", "img/banner2.jpg")
+            // auto()
+            //    clearInterval(auto);
+        };
     };
 
-    let auto = setInterval(moveToNext,3500);
+    let auto = setInterval(moveToNext, 2500);
+
+
 
 
     //按鈕左右

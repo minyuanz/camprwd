@@ -36,14 +36,22 @@ section {
     padding: 20px;
 }
 
+/* .tab_list{
+    display: flex;
+    justify-content: center;
+} */
+
 h2 {
     /* margin: 25px; */
     font-size: 32px;
+    /* cursor: pointer; */
+    margin: 0 20px;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    /* margin-top: 50px; */
 }
 
 label {

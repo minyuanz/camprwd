@@ -35,8 +35,8 @@ body {
 .banner .slider-wrap .slider-container {
     display: flex;
     position: relative;
-    /* position: relative; */
     width: 100%;
+    /* position: relative; */
     /* height: 900px; */
 }
 
