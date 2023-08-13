@@ -21,6 +21,10 @@
         integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <link rel="stylesheet" href="owl.carousel.css">
+    <link rel="stylesheet" href="owl.theme.default.min.css">
+    <script src="owl.carousel.js"></script>
+
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="footer.css">
     <link rel="stylesheet" href="item_info.css">
@@ -53,7 +57,7 @@
                 </div>
 
                 <div class="cart">
-                    <a href="#" class="cart">
+                    <a href="../cart/cart.html" class="cart">
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </div>
@@ -161,7 +165,7 @@
     </section>
 
     <h3>相關產品</h3>
-    <div class="product">
+    <div class="product owl-carousel owl-theme">
         <div class="item item1">
             <a href="">
                 <img src="item4.jpg" alt="">
@@ -245,6 +249,24 @@
     </footer>
 
     <script src="item-info.js"></script>
+    <script>
+        // $('.owl-carousel').owlCarousel({
+        //     loop: true,
+        //     margin: 10,
+        //     nav: true,
+        //     responsive: {
+        //         0: {
+        //             items: 1
+        //         },
+        //         600: {
+        //             items: 3
+        //         },
+        //         1000: {
+        //             items: 5
+        //         }
+        //     }
+        // })
+    </script>
 </body>
 
 </html>

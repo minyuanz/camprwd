@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+    <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Noto+Serif:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"
+    integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="cart.css">
+    <title>購物車|好享營</title>
+</head>
+
+<body>
+    <input type="checkbox" id="switch">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.svg" alt="">
+                </a>
+            </div>
+
+            <ul>
+                <li><a href="../item/item-rwd.html">所有商品</a></li>
+                <li><a href="../rent/rent-rwd.html">物品租賃</a></li>
+                <li><a href="../news/news-rwd.html">最新消息</a></li>
+                <li><a href="../place/place-rwd.html">精選場地</a></li>
+            </ul>
+
+            <div class="btn">
+                <div class="user">
+                    <a href="../user/user-rwd.html">
+                        <i class="fa-solid fa-user"></i>
+                    </a>
+                </div>
+
+                <div class="cart">
+                    <a href="#" class="cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hb">
+                <label for="switch">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+            </div>
+
+        </nav>
+    </header>
+
+    <div class="banner">
+        <img src="banner.jpg" alt="">
+    </div>
+
+    <div class="title">
+        <h1>購物車</h1>
+    </div>
+
+    <div class="step">
+        <div class="card">
+            <div class="txt">
+                <p>確認訂單</p>
+            </div>
+            <div class="num">
+                <span class="num1">1</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <p>資料填寫</p>
+            </div>
+            <div class="num">
+                <span class="num2">2</span>
+            </div>
+        </div>
+        <div class="card">
+            <div class="txt">
+                <p>結帳完成</p>
+            </div>
+            <div class="num">
+                <span>3</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid">
+
+        <div></div>
+        <p>商品名稱</p>
+        <p>單價</p>
+        <p>數量</p>
+        <p>小計</p>
+
+
+
+        <div class="pic">
+            <img src="item7.jpg">
+        </div>
+        <div class="name">
+            <p>多功能烤架</p>
+        </div>
+        <div class="price1">
+            <p>NT $<span>777</span></p>
+        </div>
+        <div class="number">
+            <div class="btnMinus1">-</div>
+            <input type="text" value="1" class="count1">
+            <div class="btnPlus1">+</div>
+        </div>
+        <div class="totalPrice1">
+            <p>NT $<span>777</span></p>
+        </div>
+
+
+
+        <div class="pic">
+            <img src="item9.jpg">
+        </div>
+        <div class="name">
+            <p>金屬吊燈</p>
+        </div>
+        <div class="price2">
+            <p>NT $<span>333</span></p>
+        </div>
+        <div class="number">
+            <div class="btnMinus2">-</div>
+            <input type="text" value="1" class="count2">
+            <div class="btnPlus2">+</div>
+        </div>
+        <div class="totalPrice2">
+            <p>NT $<span>333</span></p>
+        </div>
+    </div>
+
+    <div class="sum">
+        <div class="price">
+            <label for="">總金額 :</label>
+            <input type="text" value="1110" class="totalPrice">
+        </div>
+        <button>結帳</button>
+    </div>
+
+    <footer>
+        <div class="footer_wrap">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../img/logo.svg" alt="">
+                </a>
+            </div>
+
+
+            <ul>
+                <li><a href="../item/item-rwd.html">所有商品</a></li>
+                <li><a href="../rent/rent-rwd.html">物品租賃</a></li>
+                <li><a href="../news/news-rwd.html">最新消息</a></li>
+                <li><a href="../place/place-rwd.html">精選場地</a></li>
+            </ul>
+
+            <div class="txt">
+                <p>
+                    電話 : 00-0000-0000 / 信箱 : camping@gmail.com
+                    <br>
+                    本網站為緯育TibaMe前端工程師專業技術養成班第85期學員專題作品，本平台僅供學習、展示之用。
+                </p>
+            </div>
+        </div>
+
+    </footer>
+    <script src="cart.js"></script>
+
+</html>

@@ -1,0 +1,353 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: #F7F7F7;
+    font-family: 'Noto Sans TC', sans-serif;
+    overflow-x: hidden;
+}
+
+.banner {
+    width: 100%;
+}
+
+.banner img {
+    width: 100%;
+    vertical-align: bottom;
+}
+
+.title {
+    width: 80%;
+    /* border: 1px solid red; */
+    margin: auto;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.title h1 {
+    text-align: center;
+}
+
+.step {
+    width: 80%;
+    margin: auto;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+.step .card {
+    /* border: 1px solid red; */
+    margin: 0 80px;
+    text-align: center;
+}
+
+.step .card .txt {
+    font-size: 16px;
+    width: 100%;
+    /* border: 1px solid red; */
+    /* border: 1px solid red; */
+    /* font-size: 30px; */
+    /* white-space: nowrap; */
+
+}
+
+.step .card .num span {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    width: 30px;
+    line-height: 30px;
+    position: relative;
+    /* height: 30px; */
+    /* font-size: 14px; */
+}
+
+.step .card .num .num1 {
+    background-color: #ddd;
+}
+
+.step .card .num .num2::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    width: 195px;
+    border-bottom: 1px solid #ddd;
+    /* height: 10px; */
+}
+
+.step .card .num .num2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    width: 195px;
+    border-bottom: 1px solid #ddd;
+    /* height: 10px; */
+}
+
+.grid {
+    width: 80%;
+    margin: auto;
+    margin-top: 100px;
+    border: 1px solid #ddd;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 1fr 1fr;
+    justify-items: center;
+    align-items: center;
+    /* text-align: center; */
+}
+
+.grid .number {
+    display: flex;
+    /* color: #f00; */
+}
+
+.grid .number input {
+    height: 20px;
+    width: 50px;
+    margin: 0 10px;
+    display: block;
+    /* border: 1px solid red; */
+}
+
+.grid .number div {
+    /* border: 1px solid red; */
+    background-color: #eee;
+    border-radius: 3px;
+    line-height: 20px;
+    width: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.sum {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: end;
+}
+
+.sum .price {
+    /* border: 1px solid red; */
+    margin-right: 100px;
+    /* line-height: 30px; */
+    display: flex;
+    /* align-self: center; */
+    font-size: 30px;
+}
+
+.sum .price label {
+    /* border: 1px solid red; */
+    align-self: center;
+    margin-right: 30px;
+}
+
+.sum .price input {
+    border: none;
+    background-color: #f7f7f7;
+    display: block;
+    font-size: 30px;
+    /* line-height: 10px; */
+    width: 100px;
+}
+
+.sum button {
+    padding: 10px 30px;
+    border: none;
+    background-color: #57835E;
+    cursor: pointer;
+    color: #fff;
+}
+
+@media screen and (max-width:768px) {
+
+    nav {
+        width: 100%;
+        position: fixed;
+        z-index: 5;
+        background-color: #57835E;
+    }
+
+    nav ul {
+        position: absolute;
+        z-index: 5;
+        flex-direction: column;
+        top: 100%;
+        right: -100%;
+        background-color: #f7f7f7;
+        height: calc(100vh - 50px);
+        width: 100%;
+        transition: 1s;
+    }
+
+    nav ul li a {
+        /* border: 1px solid red; */
+        color: #000;
+        text-align: center;
+        display: block;
+        padding: 10px;
+        margin: 20px 0;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: auto;
+        height: 4px;
+        border-bottom: 1px solid #57835E;
+    }
+
+    .hb {
+        display: block;
+    }
+
+    .hb label {
+        width: 40px;
+        height: 40px;
+        display: block;
+        position: relative;
+        /* border: 1px solid red; */
+    }
+
+    .hb label span {
+        width: 80%;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        inset: 0;
+        margin: auto;
+    }
+
+    .hb label span:nth-child(1) {
+        translate: 0px -10px;
+        rotate: 0deg;
+        transition: rotate .5s,
+            translate .5s .5s;
+    }
+
+    .hb label span:nth-child(2) {
+        opacity: 1;
+        transition: opacity .5s 1s;
+    }
+
+    .hb label span:nth-child(3) {
+        translate: 0px 10px;
+        rotate: 0deg;
+        transition: rotate .5s,
+            translate .5s .5s;
+    }
+
+    #switch:checked+header nav .hb span:nth-child(1) {
+        translate: 0px 0px;
+        rotate: 45deg;
+        transition: translate .5s,
+            rotate .5s .5s;
+    }
+
+    #switch:checked+header nav .hb span:nth-child(2) {
+        opacity: 0;
+        transition: .5s;
+    }
+
+    #switch:checked+header nav .hb span:nth-child(3) {
+        translate: 0px 0px;
+        rotate: -45deg;
+        transition: translate .5s,
+            rotate .5s .5s;
+    }
+
+    #switch:checked+header ul {
+        right: 0;
+    }
+
+
+    .title {
+        margin-top: 50px;
+    }
+
+    .step {
+        width: 100%;
+    }
+
+    .step .card {
+        margin: 0 40px;
+    }
+
+    .step .card .txt {
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .step .card .num .num2::before,
+    .step .card .num .num2::after {
+        width: 100px;
+    }
+
+    .grid {
+        width: 100%;
+        margin-top: 50px;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 50px 1fr 1fr;
+    }
+
+    .grid p {
+        font-size: 12px;
+    }
+
+    .grid .pic img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .sum {
+        width: 90%;
+        margin: auto;
+        margin-top: 50px;
+    }
+
+    .sum .price {
+        margin: 0;
+    }
+    .sum .price label {
+        font-size: 16px;
+    }
+
+    .sum .price input {
+        font-size: 16px;
+        width: 80px;
+    }
+
+
+
+
+    .sum button {
+        padding: 0 20px;
+    }
+
+
+    .footer_wrap ul a {
+        font-size: 12px;
+    }
+
+    .footer_wrap .txt p {
+        font-size: 12px;
+    }
+}
