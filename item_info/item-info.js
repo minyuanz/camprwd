@@ -62,4 +62,13 @@ $(document).ready(function () {
         this.scrollLeft = scrollLeft - walk;
 
     });
+
+    $(".ask").click(function(){
+        alert("成功加入詢問清單。")
+    })
+
+    $(".ccart").click(function(){
+        alert("成功加入購物車。")
+    })
+
 })

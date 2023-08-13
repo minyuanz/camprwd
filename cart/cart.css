@@ -120,6 +120,7 @@ body {
     margin: 0 10px;
     display: block;
     /* border: 1px solid red; */
+    text-align: center;
 }
 
 .grid .number div {
@@ -163,6 +164,7 @@ body {
     font-size: 30px;
     /* line-height: 10px; */
     width: 100px;
+    /* text-align: center; */
 }
 
 .sum button {

@@ -148,12 +148,12 @@ section {
     cursor: pointer;
 }
 
-.info .txt .btn .cart {
+.info .txt .btn .ccart {
     background-color: #57835E;
     border: 1px solid #57835E;
 }
 
-.info .txt .btn .cart:hover {
+.info .txt .btn .ccart:hover {
     background-color: #99a57a;
     color: #fff;
     cursor: pointer;
