@@ -63,12 +63,28 @@ $(document).ready(function () {
 
     });
 
-    $(".ask").click(function(){
+    $(".ask").click(function () {
         alert("成功加入詢問清單。")
     })
 
-    $(".ccart").click(function(){
+    $(".ccart").click(function () {
         alert("成功加入購物車。")
     })
+
+
+   var aa = [{
+    aa:"bb",
+    cc:"dd"
+   }]
+
+   var aaString=JSON.stringify(aa)
+   console.log(aaString)
+   localStorage.setItem("ddd", aaString)
+
+   var get = localStorage.getItem("ddd")
+   console.log(get)
+   var gett=JSON.parse(get)
+   console.log(gett[0].aa)
+
 
 })
