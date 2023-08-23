@@ -152,6 +152,8 @@ body {
 .list_wrap .list_group .list_backcolor .pic {
     /* margin-top: 30px; */
     border: 1px solid #aaa;
+    width: 150px;
+    height: 150px;
 }
 
 .list_wrap .list_group .list_backcolor .pic img {

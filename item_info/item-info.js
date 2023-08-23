@@ -72,19 +72,41 @@ $(document).ready(function () {
     })
 
 
-   var aa = [{
-    aa:"bb",
-    cc:"dd"
-   }]
+    //    var aa = [{
+    //     aa:"bb",
+    //     cc:"dd"
+    //    }]
 
-   var aaString=JSON.stringify(aa)
-   console.log(aaString)
-   localStorage.setItem("ddd", aaString)
+    //    var aaString=JSON.stringify(aa)
+    //    console.log(aaString)
+    //    localStorage.setItem("ddd", aaString)
 
-   var get = localStorage.getItem("ddd")
-   console.log(get)
-   var gett=JSON.parse(get)
-   console.log(gett[0].aa)
+    //    var get = localStorage.getItem("ddd")
+    //    console.log(get)
+    //    var gett=JSON.parse(get)
+    //    console.log(gett[0].aa)
 
+
+    //localStorage
+    // $(".ask").click(()=>{
+    //     // console.log("aaa")
+    //     let pic = $(".showpic img").data("pic")
+    //     // console.log(pic)
+    //     let txt = $(".txt h2").data("txt")
+    //     // console.log(txt)
+        
+    //     let list =[{
+    //         "pic" : pic,
+    //         "txt": txt
+    //     }]
+    //     // console.log(list[0].pic)
+        
+    //     localStorage.setItem("aaa",JSON.stringify(list)) //轉成字串存進localstorage
+    //     let aaaa = localStorage.getItem("aaa") //提出string
+    //     let json = JSON.parse(aaaa)  //轉成物件
+    //     console.log(typeof json)
+    //     console.log(json[0].txt)
+    //     console.log(json[0].pic)
+    // })
 
 })
