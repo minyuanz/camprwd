@@ -26,6 +26,16 @@
     <link rel="stylesheet" href="index.css">
     <title>好享營</title>
     <link rel="shortcut icon" href="img/favorite.ico">
+    <style>
+        .weatherBox {
+            /* border: 1px solid red; */
+            font-size: 12px;
+        }
+
+        .selectBox {
+            width: 70px;
+        }
+    </style>
 
 </head>
 
@@ -58,6 +68,19 @@
                         <i class="fa-solid fa-cart-shopping"></i>
                     </a>
                 </div>
+            </div>
+
+            <!-- weather -->
+            <div class="weatherBox" id="weatherBox">
+                <select name="" id="selectBox" class="selectBox">
+                    <!-- <option value="" id="selectValue"></option> -->
+                </select>
+                <span class="weather">天氣：</span>
+                <span class="temp"></span>
+            </div>
+
+            <div id="test">
+
             </div>
 
             <div class="hb">
@@ -378,9 +401,9 @@
         else {
             console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
         }
-	// ]]>
+        // ]]>
     </script>
-<script src="index.js"></script>
+    <script src="index.js"></script>
 
 
 </body>

@@ -14,7 +14,7 @@ $(document).ready(function () {
         imgCount = $(".slidepic").length;
         //  index = 0;
 
-    })
+    });
 
 
 
@@ -114,35 +114,44 @@ $(document).ready(function () {
 
     });
 
-    //點擊滑動
-    // let isDown = false;
-    // let startX;
-    // let scrollLeft;
 
-    // $(".news_group").mousedown(function (e) {
-    //     isDown = true;
-    //     console.log(e.pageX);
-    //     // startX = e.pageX - this.offsetLeft;
-    //     // scrollLeft = this.scrollLeft;
-    // });
 
-    // $(".news_group").mouseleave(function () {
-    //     isDown = false;
-    // });
+    // 天氣API
+    let selectBox = document.getElementById('selectBox')
 
-    // $(".news_group").mouseup(function () {
-    //     isDown = false;
-    // });
+    // 建立地區陣列後，依數量生成option使用
+    let area = ['taipei', 'taoyuan', 'tainan', 'kaohsiung', 'taichung']
+    area.forEach(element => {
+        // console.log(element);
+        let option = document.createElement('option')
+        // option.id = 'selectarea'
+        option.innerText = element
+        selectBox.appendChild(option)
+    });
 
-    // $(".news_group").mousemove(function (e) {
-    //     if (isDown != true) {
-    //         return;
-    //     };
+    // 當select發生change事件後，獲取value並傳進fetchWeather函式執行之
+    selectBox.addEventListener('change', function () {
+        let location = this.value
+        console.log(location);
+        fetchWeather(location)
+        // console.log(fetchWeather);
+    });
 
-    //     e.preventDefault;
-    //     let x = e.pageX - this.offsetLeft;
-    //     let walk = x - startX;
-    //     this.scrollLeft = scrollLeft - walk;
+    // 一開始給函式預設值是taipei
+    fetchWeather('taipei')
 
-    // });
+    // weatherAPI，會接收location參數替換不同地區
+    function fetchWeather(location) {
+        let temp = document.querySelectorAll('.temp')
+        fetch(`http://api.weatherapi.com/v1/current.json?key=7ffec76ca2d04a7f9a9133511232410&q=${location}&aqi=no`)
+            .then(res => res.json())
+            .then(res => {
+                console.log(res);
+                let locationName = res.location.name
+                let tempC = res.current.temp_c
+                // console.log(locationName);
+                // console.log(tempC);
+                temp[0].innerHTML = `${tempC}&deg;c`
+            })
+    };
 })
